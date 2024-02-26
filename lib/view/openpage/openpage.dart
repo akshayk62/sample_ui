@@ -8,13 +8,22 @@ class NormalPage extends StatefulWidget {
 }
 
 class _NormalPageState extends State<NormalPage> {
+  int currentindex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(  items: [
-        BottomNavigationBarItem(icon: Icon(Icons.home),label: 'home'),
-        BottomNavigationBarItem(icon: Icon(Icons.alarm),label:'notifications'),
-                BottomNavigationBarItem(icon: Icon(Icons.alarm),label:'notifications'),
+      bottomNavigationBar: BottomNavigationBar( currentIndex: currentindex,
+      onTap: (index) {
+        setState(() {
+          currentindex = index;
+        });
+        
+      }, 
+         type: BottomNavigationBarType.fixed, items: [
+        BottomNavigationBarItem(icon: Icon(Icons.home),label: ''),
+        BottomNavigationBarItem(icon: Icon(Icons.alarm),label:''),
+                BottomNavigationBarItem(icon: Icon(Icons.message),label:''),
+                BottomNavigationBarItem(icon: Icon(Icons.person),label: '')
                         
 
 
@@ -40,8 +49,8 @@ class _NormalPageState extends State<NormalPage> {
               decoration: InputDecoration(
                   labelText: 'Search Your Doctor',
                   border: OutlineInputBorder(),
-                  suffixIcon: Icon(Icons.search),
-                  prefixIcon: Icon(Icons.audiotrack)),
+                  suffixIcon: Icon(Icons.spatial_audio),
+                  prefixIcon: Icon(Icons.search)),
             ),
             SizedBox(
               height: 10,
@@ -128,7 +137,7 @@ class _NormalPageState extends State<NormalPage> {
                   ),
                   SizedBox(height: 10,),
                   ListTile(
-                    title: Text('Dr.Silva'),
+                    title: const Text('Dr.Silva'),
                     subtitle: Text('worm councellor'),
                     trailing: Text('12.50'),
                     leading: CircleAvatar(

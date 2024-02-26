@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:sample_login/view/chatscreen/chatscreen.dart';
 
 import 'package:sample_login/view/loginpage/loginpage.dart';
 import 'package:sample_login/view/openpage/openpage.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -34,7 +36,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: NormalPage(), debugShowCheckedModeBanner: false,
+      home: Chatscreen(), debugShowCheckedModeBanner: false,
     );
   }
 }
